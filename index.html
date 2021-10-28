@@ -6,7 +6,7 @@
     <title>BeeHives</title>
     <link rel="shortcut icon" href="TemplateData/img/favicon.ico">
     <link rel="stylesheet" href="TemplateData/css/style.css">
-    <script src="Build/UnityLoader.js"></script>
+    <script src="Build/UnityGame.loader.js"></script>
 	<script>
 		function ToggleFullScreen() {
 			var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
@@ -68,7 +68,7 @@
 			}	
 		}
 		
-		var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%", {
+		var gameInstance = UnityLoader.instantiate("gameContainer", "https://robcrash.github.io/BeeApp/", {
 			onProgress: UnityProgress,
 			compatibilityCheck:CheckCompatibility,
 			Module: {
@@ -91,7 +91,7 @@
 		<div id="loadingBlock">
 			<img class="logo" src="TemplateData/img/Logo.png"></img>
 			<span class="subtitle"> FASE BETA <br>
-			BeeHives aun se encuentra en desarollo, por lo que puede contener errores. Si encuentras un error puedes reportarlo.<br>
+			BeeHives aun se encuentra en desarollo, por lo que puede contener errores. Si encuentras un error puedes reportarlo.<br><br>
 			Puedes experimentar tiempos de carga mas lentos si tu dispositivo es antiguo o tu conexion de red es inestable.
 			</span>
 			
