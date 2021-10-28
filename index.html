@@ -6,7 +6,7 @@
     <title>BeeHives</title>
     <link rel="shortcut icon" href="TemplateData/img/favicon.ico">
     <link rel="stylesheet" href="TemplateData/css/style.css">
-    <script src="Build/UnityGame.loader.js"></script>
+    <script src="Build/UnityGameloader.js"></script>
 	<script>
 		function ToggleFullScreen() {
 			var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
@@ -39,10 +39,10 @@
 		
 		function CheckCompatibility(gameInstance, onsuccess, onerror)
 		{
-			if (!UnityLoader.SystemInfo.hasWebGL) {
+			if (!UnityGameloader.SystemInfo.hasWebGL) {
 				document.getElementById("errorBrowserBlock").style.display = "inherit";
 				onerror();
-			} else if (UnityLoader.SystemInfo.mobile) {
+			} else if (UnityGameloader.SystemInfo.mobile) {
 				document.getElementById("warningMobileBlock").style.display = "inherit";
 				onsuccess();
 			} else if (["Firefox", "Chrome", "Safari"].indexOf(UnityLoader.SystemInfo.browser) == -1) {
@@ -68,7 +68,7 @@
 			}	
 		}
 		
-		var gameInstance = UnityLoader.instantiate("gameContainer", "https://robcrash.github.io/BeeApp/", {
+		var gameInstance = UnityGameloader.instantiate("gameContainer", "https://robcrash.github.io/BeeApp/", {
 			onProgress: UnityProgress,
 			compatibilityCheck:CheckCompatibility,
 			Module: {
